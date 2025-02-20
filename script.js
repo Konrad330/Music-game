@@ -6,7 +6,8 @@ const finalScoreDisplay = document.getElementById('final-score');
 const startButton = document.getElementById('start-button');
 const resetButton = document.getElementById('reset-button');
 const gameOverScreen = document.getElementById('game-over');
-const stave = document.querySelector('.stave');
+const upArrow = document.getElementById('up-arrow');
+const downArrow = document.getElementById('down-arrow');
 
 let score = 0;
 let level = 1;
@@ -79,35 +80,20 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// Move player with touch
-stave.addEventListener('touchstart', (e) => {
-  e.preventDefault(); // Prevent default touch behavior
-  const touchY = e.touches[0].clientY; // Get the Y position of the touch
-  movePlayerToLine(touchY); // Move the player to the tapped line
+// Move player with arrow buttons
+upArrow.addEventListener('click', () => {
+  if (playerPosition > 0) {
+    playerPosition--;
+    player.style.top = `${staveLines[playerPosition]}%`;
+  }
 });
 
-// Function to move the player to the tapped line
-function movePlayerToLine(touchY) {
-  const staveRect = stave.getBoundingClientRect();
-  const staveHeight = staveRect.height;
-  const relativeY = touchY - staveRect.top; // Y position relative to the stave
-
-  // Determine which line was tapped based on the relative Y position
-  if (relativeY < staveHeight * 0.2) {
-    playerPosition = 0; // Top line
-  } else if (relativeY < staveHeight * 0.4) {
-    playerPosition = 1; // Second line
-  } else if (relativeY < staveHeight * 0.6) {
-    playerPosition = 2; // Middle line
-  } else if (relativeY < staveHeight * 0.8) {
-    playerPosition = 3; // Fourth line
-  } else {
-    playerPosition = 4; // Bottom line
+downArrow.addEventListener('click', () => {
+  if (playerPosition < 4) {
+    playerPosition++;
+    player.style.top = `${staveLines[playerPosition]}%`;
   }
-
-  // Move the player to the new position
-  player.style.top = `${staveLines[playerPosition]}%`;
-}
+});
 
 // Start game
 startButton.addEventListener('click', () => {
