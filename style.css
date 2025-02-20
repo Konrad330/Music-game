@@ -57,10 +57,8 @@ body {
 #player {
   position: absolute;
   left: 10%; /* Adjusted for responsiveness */
-  width: 8vw; /* Use viewport width for responsiveness */
-  height: 8vw; /* Use viewport width for responsiveness */
-  max-width: 40px; /* Limit maximum size for larger screens */
-  max-height: 40px; /* Limit maximum size for larger screens */
+  width: 40px; /* Fixed size for desktop */
+  height: 40px; /* Fixed size for desktop */
   background-image: url('images/saxophone.png'); /* Your custom image */
   background-size: cover;
   background-repeat: no-repeat;
@@ -74,16 +72,13 @@ body {
 /* Notes */
 .note {
   position: absolute;
-  right: -8vw; /* Start off-screen (adjusted for responsiveness) */
-  width: 6vw; /* Use viewport width for responsiveness */
-  height: 6vw; /* Use viewport width for responsiveness */
-  max-width: 30px; /* Limit maximum size for larger screens */
-  max-height: 30px; /* Limit maximum size for larger screens */
+  right: -30px; /* Start off-screen (fixed size for desktop) */
+  width: 20px; /* Fixed size for desktop */
+  height: 20px; /* Fixed size for desktop */
   color: black; /* Black color for the musical note */
-  font-size: 6vw; /* Use viewport width for responsiveness */
-  max-font-size: 36px; /* Limit maximum size for larger screens */
+  font-size: 20px; /* Fixed size for desktop */
   text-align: center;
-  line-height: 6vw; /* Adjusted to match the new height */
+  line-height: 20px; /* Adjusted to match the new height */
   transform: translateY(-50%); /* Center vertically */
   z-index: 0; /* Ensure it's below the red line */
 }
@@ -93,8 +88,7 @@ body {
   position: absolute;
   top: 10px;
   right: 10px; /* Move to the right upper corner */
-  font-size: 4vw; /* Use viewport width for responsiveness */
-  max-font-size: 20px; /* Limit maximum size for larger screens */
+  font-size: 16px; /* Fixed size for desktop */
   z-index: 3; /* Ensure it's above everything */
 }
 
@@ -104,9 +98,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 2vw 4vw; /* Use viewport width for responsiveness */
-  font-size: 4vw; /* Use viewport width for responsiveness */
-  max-font-size: 16px; /* Limit maximum size for larger screens */
+  padding: 10px 20px; /* Fixed size for desktop */
+  font-size: 16px; /* Fixed size for desktop */
   background-color: blue;
   color: white;
   border: none;
@@ -123,11 +116,10 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 4vw; /* Use viewport width for responsiveness */
+  padding: 20px; /* Fixed size for desktop */
   border-radius: 10px;
   z-index: 10;
-  font-size: 4vw; /* Use viewport width for responsiveness */
-  max-font-size: 20px; /* Limit maximum size for larger screens */
+  font-size: 20px; /* Fixed size for desktop */
 }
 
 #game-over.hidden {
@@ -136,25 +128,24 @@ body {
 
 /* Reset button */
 #reset-button {
-  padding: 2vw 4vw; /* Use viewport width for responsiveness */
-  font-size: 4vw; /* Use viewport width for responsiveness */
-  max-font-size: 16px; /* Limit maximum size for larger screens */
+  padding: 10px 20px; /* Fixed size for desktop */
+  font-size: 16px; /* Fixed size for desktop */
   background-color: blue;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 2vw; /* Use viewport width for responsiveness */
+  margin-top: 10px; /* Fixed size for desktop */
 }
 
 /* Arrow buttons container */
 .arrow-buttons {
   position: absolute;
-  bottom: 2vw; /* Use viewport width for responsiveness */
-  right: 2vw; /* Use viewport width for responsiveness */
+  bottom: 10px; /* Fixed size for desktop */
+  right: 10px; /* Fixed size for desktop */
   display: flex;
   flex-direction: column;
-  gap: 1vw; /* Space between buttons */
+  gap: 5px; /* Fixed size for desktop */
 }
 
 /* Arrow buttons */
@@ -163,12 +154,9 @@ body {
   color: white;
   border: none;
   border-radius: 5px;
-  width: 10vw; /* Use viewport width for responsiveness */
-  height: 10vw; /* Use viewport width for responsiveness */
-  max-width: 40px; /* Limit maximum size for larger screens */
-  max-height: 40px; /* Limit maximum size for larger screens */
-  font-size: 6vw; /* Use viewport width for responsiveness */
-  max-font-size: 24px; /* Limit maximum size for larger screens */
+  width: 40px; /* Fixed size for desktop */
+  height: 40px; /* Fixed size for desktop */
+  font-size: 24px; /* Fixed size for desktop */
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -182,4 +170,65 @@ body {
 /* Hidden class */
 .hidden {
   display: none;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 600px) {
+  /* Player */
+  #player {
+    width: 8vw; /* Use viewport width for responsiveness */
+    height: 8vw; /* Use viewport width for responsiveness */
+    max-width: 40px; /* Limit maximum size for larger screens */
+    max-height: 40px; /* Limit maximum size for larger screens */
+  }
+
+  /* Notes */
+  .note {
+    right: -8vw; /* Start off-screen (adjusted for responsiveness) */
+    width: 6vw; /* Use viewport width for responsiveness */
+    height: 6vw; /* Use viewport width for responsiveness */
+    max-width: 30px; /* Limit maximum size for larger screens */
+    max-height: 30px; /* Limit maximum size for larger screens */
+    font-size: 6vw; /* Use viewport width for responsiveness */
+    max-font-size: 36px; /* Limit maximum size for larger screens */
+    line-height: 6vw; /* Adjusted to match the new height */
+  }
+
+  /* Score and level indicators */
+  .score {
+    font-size: 4vw; /* Use viewport width for responsiveness */
+    max-font-size: 20px; /* Limit maximum size for larger screens */
+  }
+
+  /* Start button */
+  #start-button {
+    padding: 2vw 4vw; /* Use viewport width for responsiveness */
+    font-size: 4vw; /* Use viewport width for responsiveness */
+    max-font-size: 16px; /* Limit maximum size for larger screens */
+  }
+
+  /* Game over screen */
+  #game-over {
+    padding: 4vw; /* Use viewport width for responsiveness */
+    font-size: 4vw; /* Use viewport width for responsiveness */
+    max-font-size: 20px; /* Limit maximum size for larger screens */
+  }
+
+  /* Reset button */
+  #reset-button {
+    padding: 2vw 4vw; /* Use viewport width for responsiveness */
+    font-size: 4vw; /* Use viewport width for responsiveness */
+    max-font-size: 16px; /* Limit maximum size for larger screens */
+    margin-top: 2vw; /* Use viewport width for responsiveness */
+  }
+
+  /* Arrow buttons */
+  .arrow-buttons button {
+    width: 10vw; /* Use viewport width for responsiveness */
+    height: 10vw; /* Use viewport width for responsiveness */
+    max-width: 40px; /* Limit maximum size for larger screens */
+    max-height: 40px; /* Limit maximum size for larger screens */
+    font-size: 6vw; /* Use viewport width for responsiveness */
+    max-font-size: 24px; /* Limit maximum size for larger screens */
+  }
 }
