@@ -61,7 +61,7 @@ body {
   height: 8vw; /* Use viewport width for responsiveness */
   max-width: 40px; /* Limit maximum size for larger screens */
   max-height: 40px; /* Limit maximum size for larger screens */
-  background-image: url('images/saxophone.png'); /* Your custom image */
+  background-image: url('saxophone.png'); /* Your custom image */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
