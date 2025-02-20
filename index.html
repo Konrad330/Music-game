@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saxophone Note Collector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <div class="stave">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="red-line"></div> <!-- Red line added here -->
+      <div id="player"></div>
+      <div id="notes-container"></div>
+    </div>
+    <div class="score">Score: <span id="score">0</span> | Level: <span id="level">1</span></div>
+    <button id="start-button">Start Game</button>
+    <div id="game-over" class="hidden">
+      <p>Game Over!</p>
+      <p>Final Score: <span id="final-score">0</span></p>
+      <button id="reset-button">Play Again</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
