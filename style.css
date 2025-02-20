@@ -50,12 +50,10 @@ body {
 #player {
   position: absolute;
   left: 50px;
-  width: 40px; /* Adjust size as needed */
-  height: 40px; /* Adjust size as needed */
-  background-image: url('https://via.placeholder.com/40'); /* Placeholder image */
-  background-size: cover; /* Ensure the image fits */
-  background-repeat: no-repeat;
-  background-position: center;
+  width: 40px;
+  height: 40px;
+  background-color: #ffcc00;
+  border-radius: 50%;
   transition: top 0.2s;
   top: 50%; /* Initial position */
   transform: translateY(-50%);
@@ -64,13 +62,11 @@ body {
 
 .note {
   position: absolute;
-  right: -30px; /* Start off-screen (adjusted for larger size) */
-  width: 30px; /* Increased from 20px to 30px (1.5x larger) */
-  height: 30px; /* Increased from 20px to 30px (1.5x larger) */
-  color: black; /* Black color for the musical note */
-  font-size: 36px; /* Increased from 24px to 36px (1.5x larger) */
-  text-align: center;
-  line-height: 30px; /* Adjusted to match the new height */
+  right: -20px; /* Start off-screen */
+  width: 20px;
+  height: 20px;
+  background-color: #ff0000;
+  border-radius: 50%;
   transform: translateY(-50%); /* Center vertically */
   z-index: 0; /* Ensure it's below the red line */
 }
