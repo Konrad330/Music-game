@@ -1,3 +1,4 @@
+/* General styles */
 body {
   font-family: Arial, sans-serif;
   display: flex;
@@ -6,17 +7,22 @@ body {
   height: 100vh;
   margin: 0;
   background-color: #f0f0f0;
+  overflow: hidden; /* Prevent scrolling */
 }
 
+/* Game container */
 .game-container {
   position: relative;
-  width: 600px;
-  height: 400px;
+  width: 90vw; /* Use viewport width for responsiveness */
+  height: 90vh; /* Use viewport height for responsiveness */
+  max-width: 600px; /* Limit maximum width for larger screens */
+  max-height: 400px; /* Limit maximum height for larger screens */
   background-color: #fff;
   border: 2px solid #000;
   overflow: hidden;
 }
 
+/* Stave */
 .stave {
   position: relative;
   width: 100%;
@@ -43,30 +49,41 @@ body {
   height: 100%;
   background-color: red;
   position: absolute;
-  left: 50px; /* Positioned at the player's x-position */
+  left: 10%; /* Positioned at the player's x-position */
   z-index: 1; /* Ensure it's above the notes */
 }
 
+/* Player */
 #player {
   position: absolute;
-  left: 50px;
-  width: 40px;
-  height: 40px;
-  background-color: #ffcc00;
-  border-radius: 50%;
+  left: 10%; /* Adjusted for responsiveness */
+  width: 8vw; /* Use viewport width for responsiveness */
+  height: 8vw; /* Use viewport width for responsiveness */
+  max-width: 40px; /* Limit maximum size for larger screens */
+  max-height: 40px; /* Limit maximum size for larger screens */
+  background-image: url('images/saxophone.png'); /* Your custom image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   transition: top 0.2s;
   top: 50%; /* Initial position */
   transform: translateY(-50%);
   z-index: 2; /* Ensure it's above the red line */
 }
 
+/* Notes */
 .note {
   position: absolute;
-  right: -20px; /* Start off-screen */
-  width: 20px;
-  height: 20px;
-  background-color: #ff0000;
-  border-radius: 50%;
+  right: -8vw; /* Start off-screen (adjusted for responsiveness) */
+  width: 6vw; /* Use viewport width for responsiveness */
+  height: 6vw; /* Use viewport width for responsiveness */
+  max-width: 30px; /* Limit maximum size for larger screens */
+  max-height: 30px; /* Limit maximum size for larger screens */
+  color: black; /* Black color for the musical note */
+  font-size: 6vw; /* Use viewport width for responsiveness */
+  max-font-size: 36px; /* Limit maximum size for larger screens */
+  text-align: center;
+  line-height: 6vw; /* Adjusted to match the new height */
   transform: translateY(-50%); /* Center vertically */
   z-index: 0; /* Ensure it's below the red line */
 }
@@ -76,17 +93,20 @@ body {
   position: absolute;
   top: 10px;
   right: 10px; /* Move to the right upper corner */
-  font-size: 20px;
+  font-size: 4vw; /* Use viewport width for responsiveness */
+  max-font-size: 20px; /* Limit maximum size for larger screens */
   z-index: 3; /* Ensure it's above everything */
 }
 
+/* Start button */
 #start-button {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 2vw 4vw; /* Use viewport width for responsiveness */
+  font-size: 4vw; /* Use viewport width for responsiveness */
+  max-font-size: 16px; /* Limit maximum size for larger screens */
   background-color: blue;
   color: white;
   border: none;
@@ -95,6 +115,7 @@ body {
   z-index: 10;
 }
 
+/* Game over screen */
 #game-over {
   position: absolute;
   top: 50%;
@@ -102,26 +123,63 @@ body {
   transform: translate(-50%, -50%);
   text-align: center;
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 20px;
+  padding: 4vw; /* Use viewport width for responsiveness */
   border-radius: 10px;
   z-index: 10;
+  font-size: 4vw; /* Use viewport width for responsiveness */
+  max-font-size: 20px; /* Limit maximum size for larger screens */
 }
 
 #game-over.hidden {
   display: none;
 }
 
+/* Reset button */
 #reset-button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 2vw 4vw; /* Use viewport width for responsiveness */
+  font-size: 4vw; /* Use viewport width for responsiveness */
+  max-font-size: 16px; /* Limit maximum size for larger screens */
   background-color: blue;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-top: 10px;
+  margin-top: 2vw; /* Use viewport width for responsiveness */
 }
 
+/* Arrow buttons container */
+.arrow-buttons {
+  position: absolute;
+  bottom: 2vw; /* Use viewport width for responsiveness */
+  right: 2vw; /* Use viewport width for responsiveness */
+  display: flex;
+  flex-direction: column;
+  gap: 1vw; /* Space between buttons */
+}
+
+/* Arrow buttons */
+.arrow-buttons button {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 10vw; /* Use viewport width for responsiveness */
+  height: 10vw; /* Use viewport width for responsiveness */
+  max-width: 40px; /* Limit maximum size for larger screens */
+  max-height: 40px; /* Limit maximum size for larger screens */
+  font-size: 6vw; /* Use viewport width for responsiveness */
+  max-font-size: 24px; /* Limit maximum size for larger screens */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrow-buttons button:hover {
+  background-color: darkblue; /* Darker color on hover */
+}
+
+/* Hidden class */
 .hidden {
   display: none;
 }
