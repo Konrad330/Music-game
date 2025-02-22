@@ -1,5 +1,5 @@
 /* General styles */
-body {
+body, html {
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
@@ -8,6 +8,7 @@ body {
   margin: 0;
   background-color: #f0f0f0;
   overflow: hidden; /* Prevent scrolling */
+  touch-action: manipulation; /* Disables double-tap zoom for the entire page */
 }
 
 /* Game container */
@@ -161,6 +162,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  touch-action: manipulation; /* Disables double-tap zoom */
 }
 
 .arrow-buttons button:hover {
