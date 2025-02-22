@@ -183,7 +183,9 @@ function collectNote(note) {
     if (initialSpawnInterval > minSpawnInterval) {
       initialSpawnInterval -= 100; // Decrease spawn interval
       noteSpeed += speedIncrease; // Increase note speed
-      clearInterval(noteInterval); // Clear the current interval
+
+      // Clear the existing noteInterval
+      clearInterval(noteInterval);
 
       // Recreate the noteInterval with the updated spawn interval
       let melodyIndex = 0; // Define melodyIndex here
